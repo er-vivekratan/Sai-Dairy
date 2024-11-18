@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    background: transparent;
+    height: 90%;
+    padding: 20px;
+    font-family: Cambria Math;
+    line-height: 1;
+    color: #000;
+    flex: 1; /* Flex property to allow resizing */
+}
+.logo img {
+    height: 190%; /* Adjust based on your logo size */
+    margin-right: 30px;
+    mix-blend-mode: multiply;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #abdbec;
+    position: sticky;
+    top: 0;
+    height: 50px;
+    z-index: 1000;
+    padding: 20px;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center align items vertically */
+}
+.navbar a {
+    color: #000;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    margin-right: 10px; /* Adjust margin for better spacing */
+}
+.navbar a:hover {
+    background-color: #8dc9e1;
+    color: #000;
+}
+.navbar .icon, .navbar .login-icon {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+}
+.navbar .icon {
+    cursor: pointer;
+    display: none;
+}
+a[class="icon"]:hover{
+    font-weight: light;
+    background-color: transparent;
+}
+.navbar .login-icon {
+    margin-left: auto; /* Push login icon to the right */
+}
+.login-icon {
+    width: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a[status="active"] {
+    background-color: #8dc9e1;
+}
+.no-scroll {
+    overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+    .logo {
+        flex: 1; /* Ensure the logo takes up available space */
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Space between icon and logo */
+    }
+    .navbar.responsive {
+        flex-direction: column; /* Stack items vertically */
+        height: 100vh;
+        overflow-y: auto;
+        justify-content: left;
+    }
+    .navbar.responsive .logo {
+        display: none; /* Hide the logo when menu is active */
+    }
+    .navbar a {
+        display: none;
+    }
+    .navbar.responsive a {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        margin: 5px 0; /* Reduce margin between buttons */
+    }
+    .navbar a.icon {
+        display: block;
+        font-size: 21px;
+        margin-top: -8px;
+        order: -1; /* Ensure the icon appears first in responsive view */
+    }
+    .navbar.responsive .icon {
+        position: static;
+        margin-right: 10px; /* Adjust based on your needs */
+    }
+    .navbar .login-icon {
+        order: 1; /* Ensure the login icon appears after other items */
+        margin: 10px -15px;
+        height: 15px;
+        width: 25px;
+        display: none;
+    }
+    a[class="icon"]:hover{
+        font-weight: lighter;
+    }
+    img[id="logo-img"] {
+        display: none;
+    }
+    a {
+        margin-top: 5px; /* Reduce margin between menu buttons */
+    }
+}
