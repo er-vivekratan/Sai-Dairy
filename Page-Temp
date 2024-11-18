@@ -37,6 +37,8 @@
         <button id="milk" class="category" onclick="setActivecat(this)">Milk/दूध</button>
         <button id="chara" class="category">Chara/चारा</button>
         <button id="animal" class="category">Cattle/पशु</button>
+
+        <!--https://www.motherdairy.com/-->
     </div>
 </div>
 <footer>
