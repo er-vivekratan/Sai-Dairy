@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Order Page</title>
+    <link rel="stylesheet" href="template.css">
+    <script src="template.js" defer></script>
+
+    <link rel="stylesheet" href="Order-Milk-Form.css">
+    <script src="Order-Milk-Form.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a class="icon" id="menuIcon" onclick="myFunction()">
+        &#9776; <!-- Menu icon -->
+    </a>
+    <a class="icon" id="backIcon" onclick="myFunction()" style="display: none;">
+        &#x2190; <!-- Back icon -->
+    </a>
+    <div class="logo">
+        <img src="Logo.png" id="logo-img" alt="Logo">
+        <h1>Sai Dairy</h1>
+    </div>
+    <a href="Home.html" onclick="setActive(this)">Home</a>
+    <a href="Milk-Order.html" status="active" onclick="setActive(this)">Milk</a>
+    <a href="#about" onclick="setActive(this)">About</a>
+    <a href="#contact" onclick="setActive(this)">Contact</a>
+    <a href="#login" class="login-icon">
+        Login
+    </a>
+</div>
+
+<div id="body">
+    <div class="container">
+        <h1>Milk Booking</h1>
+        <form id="orderForm" action="/submit-order" method="post">
+            <label for="milkType">Type of Milk: / दूध का प्रकार:</label>
+            <select id="milkType" name="milkType" required>
+                <option value="cow" amount="40.00">Cow Milk / गाय का दूध</option>
+                <option value="buffalo" amount="60.00">Buffalo Milk / भैंस का दूध</option>
+                <option value="goat" amount="30.00">Goat Milk / बकरी का दूध</option>
+            </select>
+    
+            <label for="quantity">Quantity (Liters): / मात्रा (लीटर):</label>
+            <div class="quantity-wrapper">
+                <div class="quantity-buttons">
+                    <button type="button" class="changeQuantity" onclick="changeQuantity(-1.0)">-1.0</button>
+                    <button type="button" class="changeQuantity" onclick="changeQuantity(-0.5)">-0.5</button>
+                </div>
+                <input type="text" id="quantity" name="quantity" value="0" readonly style="text-align: center; width: 80px;">
+                <div class="quantity-buttons">
+                    <button type="button" class="changeQuantity" onclick="changeQuantity(0.5)">+0.5</button>
+                    <button type="button" class="changeQuantity" onclick="changeQuantity(1.0)">+1.0</button>
+                </div>
+            </div>
+    
+            <div class="amount-wrapper">
+                <label for="amount">
+                    Total Amount / कुल राशि (₹):
+                </label>
+                <input type="text" id="amount" name="amount" value="₹ 0.00" readonly>
+            </div>
+    
+            <div class="toggle-group">
+                <label>Mode of Reach :  &nbsp&nbsp&nbsp&nbsp </label>
+                <label for="deliveryPickupToggle">Pickup</label>
+                <label>
+                    <input type="checkbox" id="deliveryPickupToggle" onchange="toggleDeliveryPickup()">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label for="deliveryPickupToggle">Delivery</label>
+            </div>
+            <input type="hidden" id="deliveryPickup" name="deliveryPickup" value="delivery">
+    
+            <div class="toggle-group">
+                <label>Mode of Payment : </label>
+                <label for="paymentTypeToggle">Daily</label>
+                <label>
+                    <input type="checkbox" id="paymentTypeToggle" onchange="togglePaymentType()">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label for="paymentTypeToggle">Monthly</label>
+            </div>
+            <input type="hidden" id="paymentType" name="paymentType" value="daily">
+    
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>FarmConnect</h2>
+        <p>Connecting Farmers to Markets</p>
+        <p>Bringing Fair Trade and Opportunities to Farmers Worldwide.</p>
+      </div>
+  
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Styles</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@farmconnect.com</p>
+        <p>Phone: +91 12345 67890</p>
+        <p>Address: 123 Green Fields, AgroCity, India</p>
+      </div>
+  
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2024 Sai Dairy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
